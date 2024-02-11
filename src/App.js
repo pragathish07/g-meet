@@ -50,7 +50,7 @@ function App(props) {
   const isUserSet = !!props.user;
   const isStreamSet = !!props.stream;
 
-  useEffect(() => {
+  useEffect((isStreamSet,isUserSet) => {
     if (isStreamSet && isUserSet) {
       participantRef.on("child_added", (snap) => {
         const preferenceUpdateEvent = participantRef
